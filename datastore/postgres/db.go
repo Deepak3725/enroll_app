@@ -10,11 +10,11 @@ import (
 
 // db details
 const (
-	postgres_host     = "db"
+	postgres_host     = "dpg-d81urjmk1jcs73dt5700-a.singapore-postgres.render.com"
 	postgres_port     = 5432
-	postgres_user     = "postgres"
-	postgres_password = "postgres"
-	postgres_dbname   = "postgres"
+	postgres_user     = "postgres_admin"
+	postgres_password = "aOONHfHIvqZew3QyPYIcKS5xAroqPfas"
+	postgres_dbname   = "my_db_h7vk"
 )
 
 // create pointer variable Db which points to sql driver
@@ -23,7 +23,7 @@ var Db *sql.DB
 // init() is always called before main() by Go compiler
 func init() {
 	// creating a database connection string
-	db_info := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+	db_info := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=require",
 		postgres_host, postgres_port, postgres_user, postgres_password, postgres_dbname)
 	// fmt.Println(db_info)
 	var err error

@@ -3,12 +3,11 @@ package model
 import "myapp/datastore/postgres"
 
 type Admin struct {
-	FirstName string
-	LastName  string
-	Email     string
-	Password  string
+    FirstName string `json:"firstname"`
+    LastName  string `json:"lastname"`
+    Email     string `json:"email"`
+    Password  string `json:"password"`
 }
-
 const queryInsertAdmin = "INSERT INTO admin(firstname, lastname, email, password) VALUES($1, $2, $3, $4) RETURNING email;"
 
 func (adm *Admin) Create() error {
